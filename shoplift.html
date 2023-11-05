@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>liftshop.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: block;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .yt-spec-icon-shape{
+            margin-left: 0px;
+    
+        }
+    </style>
+</head>
+<body>
+    <header style="display: block;">
+        <div id="container" class="style-scope-ytd-masthead">
+            <div id="start" class="style-scope-ytd-masthead">
+                <yt-icon-button id="back-button" class="style-scope-ytd-masthead">
+                    <!--css-build:shady-->
+                    <!--css-build:shady-->
+                </yt-icon-button> 
+                <tp-yt-paper-tooltip id="back-button-tooltip" for="back-button" class="style-scope-ytd-masthead"
+                 disable-upgrade></tp-yt-paper-tooltip>
+                 <yt-icon-button id="guide-button" toggleable="true" 
+                 class="style-scope ytd-masthead">
+                <!--css-build:shady-->
+                <!--css-build:shady-->
+               <button id="button" class="style-scope yt-icon"
+                aria-label="Guide">
+                <yt-icon id="guide-icon" icon="yt-icons:menu" 
+                class="style-scope ytd-masthead">
+                <!--css-build:shady-->
+                <!--css-build:shady-->
+                <yt-icon-shape class="style-scope yt-icon">
+                <icon-shape class="yt-spec-icon-shape" style="display: block;">
+                    <div style="margin-left: 0px;
+                     width:100%; height: 100%; fill: currentColor;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24"
+                         viewBox="0 0 24 24" width="24" focusable="false"
+                         style="margin-left: 0px; pointer-events: none; display: block;
+                          width: 100%; height: 100%;">
+                         <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1z"></path>
+                        </svg>
+                    </div>
+                </icon-shape>
+                </yt-icon-shape>
+                </yt-icon>
+            </button>
+            <yt-interaction id="yt-interaction" class="circular style-scope yt-icon- button">
+        
+        <h1 style="display: inline; margin-left: 0px;">Shop & Lift</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Trollely</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="products">
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Shop&Lift</p>
+    </footer>
+    
+    <script>
+        const products = [
+            { id: 1, name: 'Product 1', price:10 },
+            { id: 2, name: 'Product 2', price: 19.99 },
+            { id: 3, name: 'Product 3', price: 14.50 },
+        ];
+        function displayProducts() {
+            const productsSection = document.querySelector('.products');
+
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+                productElement.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>Price: $${product.price}</p>
+                    <button onclick="addToTrollely(${product.id})">Add to Trollely</button>
+                `;
+                productsSection.appendChild(productElement);
+            });
+        }
+
+        function addToTrollely(productId) {
+            console.log(`Product added to trollely with ID: ${productId}`);
+        }
+        window.onload = displayProducts;
+    </script>
+</body>
+</html>
